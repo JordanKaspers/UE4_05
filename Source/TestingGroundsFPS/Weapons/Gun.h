@@ -27,18 +27,24 @@ public:
 
   /** Projectile class to spawn */
   UPROPERTY(EditDefaultsOnly, Category = Projectile)
-    TSubclassOf<class ABallProjectile> ProjectileClass;
+  TSubclassOf<class ABallProjectile> ProjectileClass;
 
   /** Sound to play each time we fire */
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-    class USoundBase* FireSound;
+  class USoundBase* FireSound;
 
   /** AnimMontage to play each time we fire */
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-    class UAnimMontage* FireAnimation;
+  class UAnimMontage* FireAnimation1P;
 
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-    class UAnimInstance* AnimInstance;
+  class UAnimMontage* FireAnimation3P;
+
+  UPROPERTY()
+  class UAnimInstance* AnimInstance1P;
+
+  UPROPERTY()
+  class UAnimInstance* AnimInstance3P;
 
   /** Fires a projectile. */
   UFUNCTION(BlueprintCallable, Category = "Input")
