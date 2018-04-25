@@ -33,3 +33,4 @@ void UActorPool::Add(AActor* ActorToAdd)
   {
     Pool.Push(ActorToAdd);
   }
+}
