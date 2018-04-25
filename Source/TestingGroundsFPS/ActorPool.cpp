@@ -13,6 +13,11 @@ UActorPool::UActorPool()
 	// ...
 }
 
+TArray<AActor*> UActorPool::GetPool()
+{
+  return Pool;
+}
+
 AActor* UActorPool::Checkout()
 {
   if (Pool.Num() == 0)
@@ -29,7 +34,7 @@ void UActorPool::Return(AActor* ActorToReturn)
 
 void UActorPool::Add(AActor* ActorToAdd)
 {
-  if (ActorToAdd == nullptr)
+  if (ActorToAdd != nullptr)
   {
     Pool.Push(ActorToAdd);
   }
