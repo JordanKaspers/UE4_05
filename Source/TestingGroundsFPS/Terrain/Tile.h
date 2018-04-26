@@ -47,12 +47,17 @@ protected:
   UPROPERTY(EditDefaultsOnly, Category = "Spawning")
   FVector MaxExtent;
 
+  
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
   UFUNCTION(BlueprintCallable, Category = "Pool")
   void SetPool(UActorPool* Pool);
+
+  UFUNCTION(BlueprintCallable, Category = "Number")
+  void SetNumber(int Number);
 
 private:
 
@@ -74,5 +79,7 @@ private:
   UActorPool* Pool;
 
   AActor* NavMeshBoundsVolume;
-	
+
+  int Number;
+
 };
